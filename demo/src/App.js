@@ -6,9 +6,7 @@ import Game from './js/game';
 
 function App() {
   return (
-   
         <Game />
-   
   );
 }
 

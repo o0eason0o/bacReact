@@ -9,9 +9,26 @@ class Baccarat {
 
 }
 
+function calculate (str){
+    const regex = /\s/gi,
+        arr = str.replace(regex, '0').split('').map(x=> parseInt(x)),
+        length = arr.length;
+    let b, p;
 
-let test = 'this is the txt from baccarat';
+    // length check
+    if(length < 3 || length > 6) {
+        throw new Error('length should be 4 - 6');
+    }
 
-export default test;
+    // TODO: input order mechanism
+   
+
+
+
+    return arr;
+}
+
+
+export default {calculate};
 
 

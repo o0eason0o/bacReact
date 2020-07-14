@@ -4,7 +4,7 @@ import test from '../src/js/baccarat.js';
 
 describe('baccrat', ()=>{
     it('test', ()=>{
-        let result = test.calculate('12 34');
+        let result = test.calculate('32-35-');
         console.log(result);
         
         // expect(test.calculate()).to.be.true;

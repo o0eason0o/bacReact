@@ -1,9 +1,9 @@
 import chai from 'chai';
-let expect = chai.expect;
 import baccarat from '../src/js/baccarat.js';
 import * as mockData from '../src/js/bacData.json';
 
-const data = mockData['default'];
+const data = mockData['default'],
+    expect = chai.expect;
 
 describe('baccrat', ()=>{
     it('should calculate hands and return result', ()=>{

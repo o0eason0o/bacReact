@@ -14,9 +14,11 @@ let fileName = process.cwd() + "/src/js/data1.txt",
 function parseData(dataSet, count){
     let result = {};
     for(let i = 0; i < count; i++){
+        // console.log(i);
         let shoe = dataSet[i],
             hands = shoe.split('\n'),
             numb = hands.shift();
+        // console.log(hands);
         result[numb] = hands;
     }
     

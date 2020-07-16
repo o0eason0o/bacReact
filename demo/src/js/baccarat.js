@@ -1,19 +1,25 @@
-class Baccarat {
+// class Baccarat {
+//     constructor(){}
 
-    constructor(){}
+//     calculate (str){
+//         let numbs = str.split('');
+//         return true;
+//     }
 
-    calculate (str){
-        let numbs = str.split('');
-        return true;
-    }
+// }
 
-}
+/**
+ * 
+ * @param {String} hands string of each hand, length should be 6
+ *                       player: first 3, banker: last 3
+ *                       exp: '015413', '10-45-', '25 80 ', '08 99 '
+ */
 
-function calculate (str){
+function calculate (hands){
     const regex = /[\s\-]/gi,
-        arr = str.replace(regex, '0').split('').map(x=> parseInt(x)),
+        arr = hands.replace(regex, '0').split('').map(x=> parseInt(x)),
         length = arr.length;
-    let b, p,
+    let b, p, bTotal, pTotal,
         pBase = arr[0] + arr[1],
         result;
 
@@ -24,26 +30,29 @@ function calculate (str){
 
     // TODO: input order mechanism
     if(length === 4) {
-        p = pBase;
-        b = arr[2] + arr[3];
+        pTotal = pBase;
+        bTotal = arr[2] + arr[3];
     } else if (length === 6) {
-        p = pBase + arr[2];
-        b = arr[3] + arr[4] + arr[5];
+        pTotal = pBase + arr[2];
+        bTotal = arr[3] + arr[4] + arr[5];
     } else {
         // five cards
         if(pBase < 6) {
-            p = pBase + arr[2];
-            b = arr[3] + arr[4];
+            pTotal = pBase + arr[2];
+            bTotal = arr[3] + arr[4];
         } else {
-            p = pBase;
-            b = arr[2] + arr[3] + arr[4]; 
+            pTotal = pBase;
+            bTotal = arr[2] + arr[3] + arr[4]; 
         }
     }
 
-    console.log(p);
-    console.log(b);
-    result = ''+p+b;
-    result += p > b ? 'P' : 'B';
+    p = pTotal.toString().slice(-1);
+    b = bTotal.toString().slice(-1);
+
+    // console.log(p);
+    // console.log(b);
+    result = p + b;
+    result += p > b ? 'P' : p === b ? 'T' : 'B';
     return result;
 }
 

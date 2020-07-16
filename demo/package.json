@@ -17,7 +17,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "mocha": "mocha"
+    "mocha": "node --experimental-json-modules ./node_modules/mocha/bin/mocha"
   },
   "eslintConfig": {
     "extends": "react-app"

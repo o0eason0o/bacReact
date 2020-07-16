@@ -12,17 +12,17 @@
  * 
  * @param {String} hands string of each hand, length should be 6
  *                       player: first 3, banker: last 3
- *                       exp: '015413', '10-45-', '25 80 ', '08 99 '
+ *                       exp: '015413', '10-45-', '2580', '07224'
  */
 
 function calculate (hands){
     const regex = /[\s\-]/gi,
-        arr = hands.replace(regex, '0').split('').map(x=> parseInt(x)),
+        arr = hands.replace(regex, '').split('').map(x=> parseInt(x)),
         length = arr.length;
     let b, p, bTotal, pTotal,
-        pBase = arr[0] + arr[1],
+        pStart = arr[0] + arr[1],
+        pBase = parseInt(pStart.toString().slice(-1)),
         result;
-
     // length check
     if(length < 4 || length > 6) {
         throw new Error('length should be 4 - 6');

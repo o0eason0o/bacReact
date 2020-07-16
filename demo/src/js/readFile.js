@@ -8,8 +8,9 @@ let fileName = process.cwd() + "/src/js/data1.txt",
 // console.log('length ' + dataArray.length);
 
 function parseData(dataSet, count){
-    let result = {};
-    for(let i = 0; i < count; i++){
+    let result = {},
+        counter = count || dataSet.length;
+    for(let i = 0; i < counter; i++){
         let shoe = dataSet[i],
             hands = shoe.split('\n'),
             numb = hands.shift();
@@ -18,7 +19,8 @@ function parseData(dataSet, count){
     return result;
 }
 
-finalJson = parseData(dataArray, 10);
+finalJson = parseData(dataArray, 3);
+// finalJson = parseData(dataArray);
 
 fs.appendFile('bacData.json', JSON.stringify(finalJson), function (err) {
     if (err) throw err;

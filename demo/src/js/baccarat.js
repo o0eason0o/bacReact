@@ -1,15 +1,5 @@
-// class Baccarat {
-//     constructor(){}
-
-//     calculate (str){
-//         let numbs = str.split('');
-//         return true;
-//     }
-
-// }
-
 /**
- * 
+ * function calculate: calculate each hand and return winner
  * @param {String} hands string of each hand, length should be 6
  *                       player: first 3, banker: last 3
  *                       exp: '015413', '10-45-', '2580', '07224'

@@ -28,25 +28,6 @@ describe('baccrat', ()=>{
 import Shoe from '../src/js/shoe.js';
 
 describe('shoe', ()=>{
-
-    it('works', ()=>{
-        let shoe = new Shoe('test');
-        console.log(shoe.shoeTitle);
-        shoe.calculate('0807');
-        shoe.calculate('0807');
-        shoe.calculate('0809');
-        shoe.calculate('0808');
-
-
-        // console.log(shoe.p/shoe.hands.length)
-        // console.log(shoe.p);            
-        // console.log(shoe.hands.length);            
-        console.log(shoe.stats());
-
-    });
-});
-
-describe('shoe', ()=>{
     it('show my states', ()=>{
         let keys = Object.keys(data);
         for(let i = 0; i < keys.length; i++){

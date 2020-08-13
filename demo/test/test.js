@@ -1,6 +1,7 @@
 import chai from 'chai';
 import baccarat from '../src/js/baccarat.js';
-import * as mockData from '../src/js/bacData.json';
+// import * as mockData from '../src/js/bacData.json';
+import * as mockData from '../src/js/bacDataAll.json';
 
 const data = mockData['default'],
     expect = chai.expect;
